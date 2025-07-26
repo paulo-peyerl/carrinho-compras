@@ -1,4 +1,6 @@
 let carrinho = [];
+document.querySelector('#lista-produtos').innerHTML = 'Nenhum produto no carrinho';
+document.getElementById('valor-total').textContent = 'R$0'
 
 function adicionar() {
     let produtos = document.querySelector('#produto').value;
@@ -32,6 +34,7 @@ function atualizarCarrinho() {
         total += preco * Number(item.quantidade);
 
         document.getElementById('valor-total').textContent = `R$${total}`;
+        document.getElementById('quantidade').value = '';
     })
 
 }
