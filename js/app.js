@@ -10,6 +10,11 @@ function adicionar() {
         produto: produtos,
         quantidade: quantidadeDeProdutos
     };
+
+    if(quantidadeDeProdutos === '' || quantidadeDeProdutos <= 0) {
+        alert('Quantidade inválida. Por favor, insira um número maior que zero.');
+    }
+    
     carrinho.push(item);
 
     atualizarCarrinho();
