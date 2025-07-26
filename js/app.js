@@ -25,7 +25,7 @@ function atualizarCarrinho() {
 
         const produtoEl = document.createElement('section');
         produtoEl.className = 'carrinho__produtos__produto';
-        produtoEl.innerHTML = `<span class="texto-azul">${item.quantidade}X</span> ${nome} <span class="texto-azul">R$${preco}</span>`
+        produtoEl.innerHTML = `<span class="texto-azul">${item.quantidade}x</span> ${nome} <span class="texto-azul">R$${preco}</span>`
         
         lista.appendChild(produtoEl);
 
@@ -34,4 +34,11 @@ function atualizarCarrinho() {
         document.getElementById('valor-total').textContent = `R$${total}`;
     })
 
+}
+
+function limpar() {
+    carrinho = [];
+    const lista = document.querySelector('#lista-produtos');
+    lista.innerHTML = 'Nenhum produto no carrinho';
+    document.getElementById('valor-total').textContent = 'R$0';
 }
